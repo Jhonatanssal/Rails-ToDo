@@ -13,7 +13,7 @@
   <div class="card-body">
     <h5 class="text-center">Add task</h5>
 
-    <div class="d-flex justify-content-center align-items-center mb-5 col-md-12" id="form-task">
+    <div class="card d-flex justify-content-center align-items-center mb-5 col-md-12 py-3" id="form-task">
 
       <%= form_for([@task.project, @task], html: { class: 'form' }) do |f| %>
         <% if @task.errors.any? %>
@@ -72,8 +72,8 @@
                 <%= link_to 'Destroy', [task.project, task], method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %>
               </div>
             </h4>
-            <span class="mr-5"><%= task.description %></span>
-            <span><%= task.date %></span>
+            <p class="border rounded p-2 col-md-2 bg-light">Deadline: <%= task.date %></p>
+            <p class="mr-5"><%= task.description %></span>
           </div>
         </div>
         <% end %>
