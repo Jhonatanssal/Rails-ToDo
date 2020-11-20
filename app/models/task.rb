@@ -1,6 +1,8 @@
 class Task < ApplicationRecord
   belongs_to :project
 
+  validates :title, :description, :date, presence: true
+
   validates :status, inclusion: { in: %w[incomplete complete] }
   validates :priority, inclusion: { in: %w[high-priority mid-priority low-priority] }
 
