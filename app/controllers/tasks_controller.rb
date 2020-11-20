@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :set_project
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action :set_task, only: %i[show edit update destroy]
 
   # GET projects/1/tasks
   def index
@@ -9,8 +9,7 @@ class TasksController < ApplicationController
   end
 
   # GET projects/1/tasks/1
-  def show
-  end
+  def show; end
 
   # GET projects/1/tasks/new
   def new
@@ -18,8 +17,7 @@ class TasksController < ApplicationController
   end
 
   # GET projects/1/tasks/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST projects/1/tasks
   def create
@@ -49,17 +47,18 @@ class TasksController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_project
-      @project = current_user.projects.find(params[:project_id])
-    end
 
-    def set_task
-      @task = @project.tasks.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_project
+    @project = current_user.projects.find(params[:project_id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def task_params
-      params.require(:task).permit(:title, :description, :status, :priority, :date)
-    end
+  def set_task
+    @task = @project.tasks.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def task_params
+    params.require(:task).permit(:title, :description, :status, :priority, :date)
+  end
 end

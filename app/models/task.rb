@@ -1,16 +1,16 @@
 class Task < ApplicationRecord
   belongs_to :project
 
-  validates :status, inclusion: { in: ['incomplete', 'complete'] }
-  validates :priority, inclusion: { in: ['high-priority', 'mid-priority', 'low-priority']}
+  validates :status, inclusion: { in: %w[incomplete complete] }
+  validates :priority, inclusion: { in: %w[high-priority mid-priority low-priority] }
 
-  STATUS_OPTIONS = [['Incomplete', 'incomplete'], ['Complete', 'complete']]
+  STATUS_OPTIONS = [%w[Incomplete incomplete], %w[Complete complete]].freeze
 
   PRIORITY_OPTIONS = [
     ['High Priority', 'high-priority'],
     ['Mid Priority', 'mid-priority'],
     ['Low Priority', 'low-priority']
-  ]
+  ].freeze
 
   def badge_color1
     case priority
@@ -33,5 +33,4 @@ class Task < ApplicationRecord
       'primary'
     end
   end
-  
 end

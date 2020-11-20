@@ -1,3 +1,4 @@
+# rubocop:disable Layout/LineLength
 require 'test_helper'
 
 class ProjectsControllerTest < ActionDispatch::IntegrationTest
@@ -5,17 +6,17 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
     @project = projects(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get projects_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_project_url
     assert_response :success
   end
 
-  test "should create project" do
+  test 'should create project' do
     assert_difference('Project.count') do
       post projects_url, params: { project: { description: @project.description, name: @project.name, user_id: @project.user_id } }
     end
@@ -23,22 +24,22 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to project_url(Project.last)
   end
 
-  test "should show project" do
+  test 'should show project' do
     get project_url(@project)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_project_url(@project)
     assert_response :success
   end
 
-  test "should update project" do
+  test 'should update project' do
     patch project_url(@project), params: { project: { description: @project.description, name: @project.name, user_id: @project.user_id } }
     assert_redirected_to project_url(@project)
   end
 
-  test "should destroy project" do
+  test 'should destroy project' do
     assert_difference('Project.count', -1) do
       delete project_url(@project)
     end
@@ -46,3 +47,5 @@ class ProjectsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to projects_url
   end
 end
+
+# rubocop:enable Layout/LineLength
