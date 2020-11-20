@@ -4,25 +4,27 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
-default: &default
-  adapter: sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
-
-development:
-  <<: *default
-  database: db/development.sqlite3
+#    default: &default
+#      adapter: sqlite3
+#      pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#      timeout: 5000
+#    
+#    development:
+#      <<: *default
+#      database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: db/test.sqlite3
 
-production:
-  <<: *default
-  database: db/production.sqlite3
+
+#    test:
+#      <<: *default
+#      database: db/test.sqlite3
+#    
+#    production:
+#      <<: *default
+#      database: db/production.sqlite3
 
 
 
@@ -56,17 +58,17 @@ production:
 
 
 
-#  default: &default
-#    adapter: postgresql
-#    encoding: unicode
+  default: &default
+    adapter: postgresql
+    encoding: unicode
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
-#  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
-#  development:
-#    <<: *default
-#    database: todo_development
-#  
+  development:
+    <<: *default
+    database: todo_development
+  
 
 
 
@@ -104,9 +106,9 @@ production:
 
 
 
-#   test:
-#     <<: *default
-#     database: todo_test
+ test:
+   <<: *default
+   database: todo_test
 
 
 
@@ -134,8 +136,8 @@ production:
 
 
 
-#   production:
-#     <<: *default
-#     database: todo_production
-#     username: todo
-#     password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+ production:
+   <<: *default
+   database: todo_production
+   username: todo
+   password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
