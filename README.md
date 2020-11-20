@@ -1,4 +1,4 @@
-# Ruby on Rails Capstone project Twitter Redesign
+# Ruby on Rails ToDo App
 
 ## Built With
 
@@ -8,7 +8,7 @@
 
 ## Live Demo
 
-[Live demo](https://dry-falls-69472.herokuapp.com)
+[Live demo](https://glacial-retreat-02171.herokuapp.com/)
 
 ### Prerequisites
 
