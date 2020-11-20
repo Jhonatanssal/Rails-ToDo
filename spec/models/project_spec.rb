@@ -4,10 +4,10 @@ RSpec.describe Project, type: :model do
   Project.delete_all
   User.delete_all
 
-  let!(:user) { User.create(email: 'test@test.co', password: '123456')}
-  let!(:valid_project) { Project.create(name: 'Test', description: 'test', user_id: user.id)}
-  let!(:invalid_project) { Project.create(name: 'Test', description: 'test', user_id: nil)}
-  let!(:invalid_project1) { Project.create(name: '', description: 'test', user_id: nil)}
+  let!(:user) { User.create(email: 'test@test.co', password: '123456') }
+  let!(:valid_project) { Project.create(name: 'Test', description: 'test', user_id: user.id) }
+  let!(:invalid_project) { Project.create(name: 'Test', description: 'test', user_id: nil) }
+  let!(:invalid_project1) { Project.create(name: '', description: 'test', user_id: nil) }
 
   context 'Valid project' do
     it 'validates presence of user_id' do

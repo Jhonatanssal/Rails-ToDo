@@ -1,12 +1,14 @@
+# rubocop:disable Layout/LineLength
+
 require 'rails_helper'
 
 RSpec.describe ProjectsController, type: :controller do
   Project.delete_all
   User.delete_all
 
-  let!(:user) { User.create(email: 'test@test.co', password: '123456')}
-  let!(:valid_project) { Project.create(name: 'Test', description: 'test', user_id: user.id)}
-  let!(:invalid_project) { Project.create(name: 'Test', description: 'test', user_id: nil)}
+  let!(:user) { User.create(email: 'test@test.co', password: '123456') }
+  let!(:valid_project) { Project.create(name: 'Test', description: 'test', user_id: user.id) }
+  let!(:invalid_project) { Project.create(name: 'Test', description: 'test', user_id: nil) }
 
   describe '#create' do
     context 'Valid project' do
@@ -50,3 +52,5 @@ RSpec.describe ProjectsController, type: :controller do
     end
   end
 end
+
+# rubocop:enable Layout/LineLength
