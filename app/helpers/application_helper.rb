@@ -1,7 +1,5 @@
 module ApplicationHelper
   def logout
-    if current_user
-      link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-warning'
-    end
+    return link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-warning' if current_user
   end
 end
