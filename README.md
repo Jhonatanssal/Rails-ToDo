@@ -8,7 +8,7 @@
 
 ## Live Demo
 
-[Live demo](https://glacial-retreat-02171.herokuapp.com/)
+[Live demo](https://tranquil-chamber-66304.herokuapp.com/)
 
 ### Prerequisites
 
